@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RajatHub — The Free Internet, Organized</title>
+
+<meta name="description"
+content="RajatHub is a premium directory of free tools, AI, software, education, design and useful resources.">
+
+<style>
+
+/* =========================================================
+   RAJATHUB — PREMIUM INDEX
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+    --bg:#050507;
+    --bg2:#090a0f;
+    --panel:rgba(17,18,25,.72);
+    --panel-solid:#111219;
+    --border:rgba(255,255,255,.09);
+    --border-hover:rgba(145,125,255,.45);
+
+    --text:#f7f7fb;
+    --muted:#9193a3;
+    --muted2:#696b79;
+
+    --primary:#8b7cff;
+    --primary2:#b09cff;
+    --glow:rgba(139,124,255,.35);
+
+    --green:#61e6a5;
+
+    --radius:20px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 15% 10%,rgba(110,80,255,.13),transparent 28%),
+        radial-gradient(circle at 85% 15%,rgba(0,180,255,.07),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   AMBIENT BACKGROUND
+   ========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(119,94,255,.09);
+    filter:blur(100px);
+    top:20%;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050507;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#292635;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#4b416e;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:16px 25px;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:12px 15px 12px 20px;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    background:rgba(8,8,12,.72);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25),
+        inset 0 1px rgba(255,255,255,.04);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    text-decoration:none;
+    color:white;
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:21px;
+    font-weight:700;
+}
+
+.logo-icon{
+    width:35px;
+    height:35px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(135deg,#8878ff,#5446cc);
+
+    box-shadow:
+        0 0 25px rgba(124,105,255,.35);
+
+    font-size:17px;
+}
+
+.logo span{
+    color:#9b8cff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.nav-links a{
+    color:#a7a8b5;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:10px;
+    font-size:13px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:white;
+    background:rgba(255,255,255,.05);
+}
+
+.nav-actions{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn{
+    width:38px;
+    height:38px;
+
+    border:1px solid var(--border);
+    border-radius:11px;
+
+    background:rgba(255,255,255,.035);
+    color:#d8d8e3;
+
+    cursor:pointer;
+    transition:.25s;
+
+    font-size:15px;
+}
+
+.icon-btn:hover{
+    border-color:var(--border-hover);
+    background:rgba(139,124,255,.1);
+    transform:translateY(-2px);
+}
+
+.mobile-menu{
+    display:none;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+    max-width:1150px;
+    margin:auto;
+
+    min-height:850px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:150px 25px 100px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 13px;
+
+    border:1px solid rgba(139,124,255,.2);
+    border-radius:100px;
+
+    background:rgba(139,124,255,.07);
+
+    color:#bcb4ff;
+
+    font-size:12px;
+    font-weight:600;
+
+    animation:fadeUp .8s ease both;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    background:#63e6a7;
+    border-radius:50%;
+    box-shadow:0 0 12px #63e6a7;
+}
+
+.hero h1{
+    margin-top:28px;
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(52px,8vw,100px);
+
+    line-height:.94;
+    letter-spacing:-5px;
+
+    max-width:1050px;
+
+    animation:fadeUp .9s .1s ease both;
+}
+
+.hero h1 .gradient{
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff 20%,
+            #a99aff 50%,
+            #6f60ff 80%
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    background-size:200% auto;
+
+    animation:gradientMove 5s linear infinite;
+}
+
+.hero-description{
+    max-width:680px;
+
+    margin-top:27px;
+
+    color:#9698a8;
+
+    font-size:17px;
+    line-height:1.7;
+
+    animation:fadeUp .9s .2s ease both;
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-wrap{
+    width:100%;
+    max-width:720px;
+
+    margin-top:42px;
+
+    animation:fadeUp .9s .3s ease both;
+}
+
+.search-box{
+    display:flex;
+    align-items:center;
+
+    height:64px;
+
+    padding:6px;
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:17px;
+
+    background:rgba(17,18,25,.82);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 50px rgba(111,96,255,.08);
+
+    transition:.3s;
+}
+
+.search-box:focus-within{
+    border-color:rgba(139,124,255,.5);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 50px rgba(111,96,255,.15);
+}
+
+.search-icon{
+    width:52px;
+    color:#737586;
+    font-size:19px;
+}
+
+.search-box input{
+    flex:1;
+
+    height:100%;
+
+    border:0;
+    outline:0;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:15px;
+}
+
+.search-box input::placeholder{
+    color:#686a78;
+}
+
+.search-button{
+    height:50px;
+
+    padding:0 21px;
+
+    border:0;
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #8c7dff,
+        #6655e9
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(111,96,255,.22);
+
+    transition:.25s;
+}
+
+.search-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(111,96,255,.35);
+}
+
+/* =========================
+   HERO STATS
+   ========================= */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:45px;
+
+    margin-top:38px;
+
+    animation:fadeUp .9s .4s ease both;
+}
+
+.stat{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.stat strong{
+    font-family:"Space Grotesk";
+    font-size:20px;
+}
+
+.stat span{
+    color:#656775;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* =========================
+   MAIN
+   ========================= */
+
+main{
+    max-width:1250px;
+    margin:auto;
+    padding:20px 25px 100px;
+}
+
+.section-header{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+
+    margin-bottom:25px;
+}
+
+.section-label{
+    color:#8175ff;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:9px;
+}
+
+.section-title{
+    font-family:"Space Grotesk";
+    font-size:31px;
+    letter-spacing:-1px;
+}
+
+.section-description{
+    color:#727482;
+    font-size:13px;
+    margin-top:7px;
+}
+
+/* =========================
+   CATEGORY GRID
+   ========================= */
+
+.category-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:13px;
+
+    margin-bottom:100px;
+}
+
+.category{
+    position:relative;
+
+    padding:25px 20px;
+
+    min-height:140px;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.012)
+        );
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:
+        transform .35s,
+        border-color .35s,
+        background .35s;
+}
+
+.category::before{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    top:-60px;
+    right:-40px;
+
+    border-radius:50%;
+
+    background:rgba(139,124,255,.12);
+
+    filter:blur(25px);
+
+    transition:.4s;
+}
+
+.category:hover{
+    transform:translateY(-7px);
+
+    border-color:var(--border-hover);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139,124,255,.09),
+            rgba(255,255,255,.02)
+        );
+}
+
+.category:hover::before{
+    transform:scale(2);
+}
+
+.category-icon{
+    font-size:29px;
+    margin-bottom:17px;
+}
+
+.category h3{
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.category p{
+    color:#737583;
+    font-size:11px;
+}
+
+/* =========================
+   RESOURCES
+   ========================= */
+
+.resource-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+}
+
+.resource{
+    position:relative;
+
+    padding:23px;
+
+    border:1px solid var(--border);
+    border-radius:19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19,20,29,.85),
+            rgba(12,13,18,.8)
+        );
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    animation:cardIn .6s ease both;
+}
+
+.resource:hover{
+    transform:translateY(-6px);
+
+    border-color:var(--border-hover);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25),
+        0 0 35px rgba(111,96,255,.06);
+}
+
+.resource-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:start;
+
+    margin-bottom:19px;
+}
+
+.resource-icon{
+    width:47px;
+    height:47px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,124,255,.17),
+            rgba(139,124,255,.04)
+        );
+
+    border:1px solid rgba(139,124,255,.15);
+
+    font-size:22px;
+}
+
+.favorite{
+    width:34px;
+    height:34px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    background:rgba(255,255,255,.025);
+
+    color:#777988;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.favorite:hover,
+.favorite.active{
+    color:#ffcf66;
+    border-color:rgba(255,207,102,.25);
+    background:rgba(255,207,102,.06);
+}
+
+.resource h3{
+    font-family:"Space Grotesk";
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.resource-description{
+    color:#7f8190;
+
+    font-size:12px;
+    line-height:1.65;
+
+    min-height:40px;
+}
+
+.resource-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-top:20px;
+}
+
+.tag{
+    padding:6px 9px;
+
+    border-radius:7px;
+
+    background:rgba(139,124,255,.08);
+    color:#9388ff;
+
+    font-size:10px;
+    font-weight:600;
+}
+
+.visit{
+    color:#d8d8e1;
+
+    text-decoration:none;
+
+    font-size:11px;
+    font-weight:700;
+
+    padding:8px 12px;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.25s;
+}
+
+.visit:hover{
+    background:#7668ff;
+    color:white;
+}
+
+/* =========================
+   FEATURED BANNER
+   ========================= */
+
+.featured{
+    position:relative;
+
+    margin:100px 0;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(139,124,255,.18);
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(139,124,255,.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #11111a,
+            #0b0c12
+        );
+
+    overflow:hidden;
+}
+
+.featured::after{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    right:-120px;
+    bottom:-180px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(139,124,255,.12);
+    box-shadow:
+        0 0 0 50px rgba(139,124,255,.025),
+        0 0 0 100px rgba(139,124,255,.015);
+}
+
+.featured-content{
+    position:relative;
+    z-index:2;
+
+    max-width:650px;
+}
+
+.featured h2{
+    font-family:"Space Grotesk";
+
+    font-size:35px;
+
+    margin:12px 0;
+}
+
+.featured p{
+    color:#888a99;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.featured-button{
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    color:white;
+    text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #8d7eff,
+        #6556e6
+    );
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.25s;
+}
+
+.featured-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(111,96,255,.3);
+}
+
+/* =========================
+   EMPTY SEARCH
+   ========================= */
+
+.no-results{
+    display:none;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    color:#777988;
+}
+
+.no-results div{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    border-top:1px solid var(--border);
+
+    padding:45px 25px;
+
+    background:#040406;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-logo{
+    font-family:"Space Grotesk";
+    font-weight:700;
+}
+
+.footer-logo span{
+    color:#887aff;
+}
+
+footer p{
+    color:#595b68;
+    font-size:11px;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes cardIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:200% center;
+    }
+
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:950px){
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .resource-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    header{
+        padding:10px 12px;
+    }
+
+    .navbar{
+        padding:10px 12px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .hero{
+        min-height:750px;
+        padding:130px 18px 70px;
+    }
+
+    .hero h1{
+        font-size:53px;
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .search-box{
+        height:58px;
+    }
+
+    .search-button{
+        height:44px;
+        padding:0 15px;
+    }
+
+    .stats{
+        gap:22px;
+    }
+
+    .stat strong{
+        font-size:16px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:25px;
+    }
+
+    .featured{
+        padding:30px 25px;
+    }
+
+    .featured h2{
+        font-size:27px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:430px){
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .category{
+        min-height:125px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+    <div class="navbar">
+
+        <a href="#" class="logo">
+
+            <div class="logo-icon">
+                R
+            </div>
+
+            Rajat<span>Hub</span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#categories">Categories</a>
+
+            <a href="#resources">Resources</a>
+
+            <a href="#featured">Featured</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                class="icon-btn"
+                id="themeButton"
+                title="Change theme">
+                ◐
+            </button>
+
+            <button
+                class="icon-btn mobile-menu"
+                id="mobileButton">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-badge">
+
+        <span class="status-dot"></span>
+
+        The free internet, organized
+
+    </div>
+
+
+    <h1>
+
+        Discover the
+        <span class="gradient">
+            best free
+        </span>
+        resources.
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        RajatHub is a curated collection of powerful
+        free tools, software, AI, education, design,
+        development and useful resources — all in one place.
+
+    </p>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-wrap">
+
+        <div class="search-box">
+
+            <div class="search-icon">
+                ⌕
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tools, AI, software, design..."
+                autocomplete="off"
+            >
+
+            <button
+                class="search-button"
+                onclick="performSearch()">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong>100+</strong>
+
+            <span>Resources</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>10+</strong>
+
+            <span>Categories</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>100%</strong>
+
+            <span>Free to Explore</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <!-- CATEGORIES -->
+
+    <section id="categories">
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    Explore
+                </div>
+
+                <h2 class="section-title">
+                    Browse categories
+                </h2>
+
+                <p class="section-description">
+                    Find exactly what you need.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <div
+                class="category"
+                data-category="AI">
+
+                <div class="category-icon">
+                    🤖
+                </div>
+
+                <h3>AI Tools</h3>
+
+                <p>Artificial intelligence</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Software">
+
+                <div class="category-icon">
+                    💻
+                </div>
+
+                <h3>Software</h3>
+
+                <p>Useful applications</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Design">
+
+                <div class="category-icon">
+                    🎨
+                </div>
+
+                <h3>Design</h3>
+
+                <p>Creative resources</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Development">
+
+                <div class="category-icon">
+                    🧑‍💻
+                </div>
+
+                <h3>Development</h3>
+
+                <p>Code & developer tools</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Education">
+
+                <div class="category-icon">
+                    📚
+                </div>
+
+                <h3>Education</h3>
+
+                <p>Learn for free</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Gaming">
+
+                <div class="category-icon">
+                    🎮
+                </div>
+
+                <h3>Gaming</h3>
+
+                <p>Games & resources</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Android">
+
+                <div class="category-icon">
+                    📱
+                </div>
+
+                <h3>Android</h3>
+
+                <p>Mobile resources</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Media">
+
+                <div class="category-icon">
+                    🎬
+                </div>
+
+                <h3>Media</h3>
+
+                <p>Video & audio tools</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Privacy">
+
+                <div class="category-icon">
+                    🔐
+                </div>
+
+                <h3>Privacy</h3>
+
+                <p>Security & privacy</p>
+
+            </div>
+
+
+            <div
+                class="category"
+                data-category="Productivity">
+
+                <div class="category-icon">
+                    ⚡
+                </div>
+
+                <h3>Productivity</h3>
+
+                <p>Work smarter</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESOURCES -->
+
+    <section id="resources">
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    Handpicked
+                </div>
+
+                <h2 class="section-title">
+                    Featured resources
+                </h2>
+
+                <p class="section-description">
+                    Useful resources worth knowing about.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="resource-grid" id="resourceGrid">
+
+
+            <!-- RESOURCE 1 -->
+
+            <article
+                class="resource"
+                data-name="ChatGPT AI"
+                data-category="AI">
+
+                <div class="resource-top">
+
+                    <div class="resource-icon">
+                        ✦
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="toggleFavorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+                <h3>AI Tools</h3>
+
+                <p class="resource-description">
+                    Discover powerful artificial intelligence
+                    tools for writing, research and creativity.
+                </p>
+
+                <div class="resource-bottom">
+
+                    <span class="tag">
+                        AI
+                    </span>
+
+                    <a
+                        href="https://chatgpt.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="visit">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- RESOURCE 2 -->
+
+            <article
+                class="resource"
+                data-name="GitHub Developer"
+                data-category="Development">
+
+                <div class="resource-top">
+
+                    <div class="resource-icon">
+                        ◈
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="toggleFavorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+                <h3>GitHub</h3>
+
+                <p class="resource-description">
+                    Free platform for developers to host,
+                    collaborate and build projects.
+                </p>
+
+                <div class="resource-bottom">
+
+                    <span class="tag">
+                        Development
+                    </span>
+
+                    <a
+                        href="https://github.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="visit">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- RESOURCE 3 -->
+
+            <article
+                class="resource"
+                data-name="Canva Design"
+                data-category="Design">
+
+                <div class="resource-top">
+
+                    <div class="resource-icon">
+                        ✎
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="toggleFavorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+                <h3>Canva</h3>
+
+                <p class="resource-description">
+                    Create graphics, presentations,
+                    social posts and more.
+                </p>
+
+                <div class="resource-bottom">
+
+                    <span class="tag">
+                        Design
+                    </span>
+
+                    <a
+                        href="https://www.canva.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="visit">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- RESOURCE 4 -->
+
+            <article
+                class="resource"
+                data-name="Khan Academy Education"
+                data-category="Education">
+
+                <div class="resource-top">
+
+                    <div class="resource-icon">
+                        ◇
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="toggleFavorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+                <h3>Khan Academy</h3>
+
+                <p class="resource-description">
+                    Free educational lessons and practice
+                    for students across many subjects.
+                </p>
+
+                <div class="resource-bottom">
+
+                    <span class="tag">
+                        Education
+                    </span>
+
+                    <a
+                        href="https://www.khanacademy.org/"
+                        target="_blank"
+                        rel="noopener"
+                        class="visit">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- RESOURCE 5 -->
+
+            <article
+                class="resource"
+                data-name="Visual Studio Code Software"
+                data-category="Software">
+
+                <div class="resource-top">
+
+                    <div class="resource-icon">
+                        ⌘
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="toggleFavorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+                <h3>VS Code</h3>
+
+                <p class="resource-description">
+                    Powerful and free code editor for
+                    web development and programming.
+                </p>
+
+                <div class="resource-bottom">
+
+                    <span class="tag">
+                        Software
+                    </span>
+
+                    <a
+                        href="https://code.visualstudio.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="visit">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- RESOURCE 6 -->
+
+            <article
+                class="resource"
+                data-name="Figma Design"
+                data-category="Design">
+
+                <div class="resource-top">
+
+                    <div class="resource-icon">
+                        ◉
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="toggleFavorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+                <h3>Figma</h3>
+
+                <p class="resource-description">
+                    Collaborative interface design and
+                    prototyping platform.
+                </p>
+
+                <div class="resource-bottom">
+
+                    <span class="tag">
+                        Design
+                    </span>
+
+                    <a
+                        href="https://www.figma.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="visit">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="no-results" id="noResults">
+
+            <div>⌕</div>
+
+            <h3>No resources found</h3>
+
+            <p>
+                Try another search.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURED -->
+
+    <section id="featured">
+
+        <div class="featured">
+
+            <div class="featured-content">
+
+                <div class="section-label">
+                    RAJATHUB
+                </div>
+
+                <h2>
+                    One place.
+                    Endless possibilities.
+                </h2>
+
+                <p>
+                    RajatHub is being built to become a massive
+                    collection of useful free resources from
+                    across the internet.
+                </p>
+
+                <a
+                    href="#categories"
+                    class="featured-button">
+                    Explore RajatHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            Rajat<span>Hub</span>
+        </div>
+
+        <p>
+            © 2026 RajatHub · Created by Rajat Yadav
+        </p>
+
+        <p>
+            Free. Useful. Organized.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================
+   SEARCH
+========================= */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const resources =
+    document.querySelectorAll(".resource");
+
+const noResults =
+    document.getElementById("noResults");
+
+
+function performSearch(){
+
+    const query =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+    let visible = 0;
+
+
+    resources.forEach(resource => {
+
+        const name =
+            resource.dataset.name.toLowerCase();
+
+        const category =
+            resource.dataset.category.toLowerCase();
+
+        const text =
+            resource.innerText.toLowerCase();
+
+
+        if(
+            query === "" ||
+            name.includes(query) ||
+            category.includes(query) ||
+            text.includes(query)
+        ){
+
+            resource.style.display = "block";
+
+            visible++;
+
+        }else{
+
+            resource.style.display = "none";
+
+        }
+
+    });
+
+
+    if(visible === 0){
+
+        noResults.style.display = "block";
+
+    }else{
+
+        noResults.style.display = "none";
+
+    }
+
+}
+
+
+searchInput.addEventListener(
+    "input",
+    performSearch
+);
+
+
+/* =========================
+   KEYBOARD SEARCH
+========================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "/" &&
+            document.activeElement !== searchInput
+        ){
+
+            event.preventDefault();
+
+            searchInput.focus();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   FAVORITES
+========================= */
+
+function toggleFavorite(button){
+
+    button.classList.toggle("active");
+
+    if(
+        button.classList.contains("active")
+    ){
+
+        button.innerHTML = "★";
+
+    }else{
+
+        button.innerHTML = "☆";
+
+    }
+
+}
+
+
+/* =========================
+   CATEGORY FILTER
+========================= */
+
+document
+.querySelectorAll(".category")
+.forEach(category => {
+
+    category.addEventListener(
+        "click",
+        () => {
+
+            const selected =
+                category.dataset.category
+                .toLowerCase();
+
+
+            resources.forEach(resource => {
+
+                const resourceCategory =
+                    resource.dataset.category
+                    .toLowerCase();
+
+
+                if(
+                    selected === resourceCategory
+                ){
+
+                    resource.style.display =
+                        "block";
+
+                }else{
+
+                    resource.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            document
+                .getElementById("resources")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
+
+        }
+    );
+
+});
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+const themeButton =
+    document.getElementById("themeButton");
+
+let softMode = false;
+
+
+themeButton.addEventListener(
+    "click",
+    () => {
+
+        softMode = !softMode;
+
+
+        if(softMode){
+
+            document.body.style.setProperty(
+                "--bg",
+                "#0b0c12"
+            );
+
+            document.body.style.setProperty(
+                "--primary",
+                "#6fe0ff"
+            );
+
+            document.body.style.setProperty(
+                "--primary2",
+                "#8de9ff"
+            );
+
+            themeButton.innerHTML = "☀";
+
+        }else{
+
+            document.body.style.setProperty(
+                "--bg",
+                "#050507"
+            );
+
+            document.body.style.setProperty(
+                "--primary",
+                "#8b7cff"
+            );
+
+            document.body.style.setProperty(
+                "--primary2",
+                "#b09cff"
+            );
+
+            themeButton.innerHTML = "◐";
+
+        }
+
+    }
+);
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const mobileButton =
+    document.getElementById("mobileButton");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+
+mobileButton.addEventListener(
+    "click",
+    () => {
+
+        if(
+            navLinks.style.display === "flex"
+        ){
+
+            navLinks.style.display = "none";
+
+        }else{
+
+            navLinks.style.display = "flex";
+
+            navLinks.style.position =
+                "absolute";
+
+            navLinks.style.top =
+                "70px";
+
+            navLinks.style.left =
+                "12px";
+
+            navLinks.style.right =
+                "12px";
+
+            navLinks.style.flexDirection =
+                "column";
+
+            navLinks.style.padding =
+                "12px";
+
+            navLinks.style.background =
+                "rgba(10,10,15,.95)";
+
+            navLinks.style.border =
+                "1px solid rgba(255,255,255,.1)";
+
+            navLinks.style.borderRadius =
+                "15px";
+
+        }
+
+    }
+);
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.1
+        }
+    );
+
+
+document
+.querySelectorAll(
+    ".category,.resource,.featured"
+)
+.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(25px)";
+
+    element.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    observer.observe(element);
+
+});
+
+
+</script>
+
+</body>
+</html>
