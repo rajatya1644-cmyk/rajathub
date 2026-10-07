@@ -1,0 +1,182 @@
+[
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "Development",
+    "description": "Build, share and discover open-source software and developer projects.",
+    "url": "https://github.com",
+    "free": true,
+    "tags": ["code", "git", "opensource", "development"]
+  },
+  {
+    "id": "vscode",
+    "name": "Visual Studio Code",
+    "category": "Development",
+    "description": "A powerful free code editor for almost every programming language.",
+    "url": "https://code.visualstudio.com",
+    "free": true,
+    "tags": ["editor", "coding", "programming"]
+  },
+  {
+    "id": "khan-academy",
+    "name": "Khan Academy",
+    "category": "Education",
+    "description": "Learn mathematics, science, computing and many other subjects for free.",
+    "url": "https://www.khanacademy.org",
+    "free": true,
+    "tags": ["school", "learning", "courses", "education"]
+  },
+  {
+    "id": "canva",
+    "name": "Canva",
+    "category": "Design",
+    "description": "Create presentations, graphics, posters and social media designs.",
+    "url": "https://www.canva.com",
+    "free": true,
+    "tags": ["graphics", "design", "templates"]
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "category": "Design",
+    "description": "Design interfaces, prototypes and creative projects in your browser.",
+    "url": "https://www.figma.com",
+    "free": true,
+    "tags": ["ui", "ux", "prototype", "design"]
+  },
+  {
+    "id": "photopea",
+    "name": "Photopea",
+    "category": "Design",
+    "description": "A powerful browser-based image editor with support for many formats.",
+    "url": "https://www.photopea.com",
+    "free": true,
+    "tags": ["photoshop", "image", "editor"]
+  },
+  {
+    "id": "gimp",
+    "name": "GIMP",
+    "category": "Design",
+    "description": "Free and open-source image editing software.",
+    "url": "https://www.gimp.org",
+    "free": true,
+    "tags": ["image", "photo", "editor", "opensource"]
+  },
+  {
+    "id": "obs",
+    "name": "OBS Studio",
+    "category": "Media",
+    "description": "Free and open-source software for recording and live streaming.",
+    "url": "https://obsproject.com",
+    "free": true,
+    "tags": ["streaming", "recording", "youtube", "video"]
+  },
+  {
+    "id": "blender",
+    "name": "Blender",
+    "category": "Design",
+    "description": "Free and open-source 3D creation software.",
+    "url": "https://www.blender.org",
+    "free": true,
+    "tags": ["3d", "animation", "modeling", "render"]
+  },
+  {
+    "id": "libreoffice",
+    "name": "LibreOffice",
+    "category": "Productivity",
+    "description": "A free and open-source office suite for documents, spreadsheets and presentations.",
+    "url": "https://www.libreoffice.org",
+    "free": true,
+    "tags": ["office", "documents", "spreadsheet"]
+  },
+  {
+    "id": "7zip",
+    "name": "7-Zip",
+    "category": "Software",
+    "description": "Free and open-source file archiver with excellent compression.",
+    "url": "https://www.7-zip.org",
+    "free": true,
+    "tags": ["zip", "files", "compression"]
+  },
+  {
+    "id": "firefox",
+    "name": "Firefox",
+    "category": "Privacy",
+    "description": "A free and privacy-focused web browser from Mozilla.",
+    "url": "https://www.mozilla.org/firefox",
+    "free": true,
+    "tags": ["browser", "privacy", "web"]
+  },
+  {
+    "id": "proton-mail",
+    "name": "Proton Mail",
+    "category": "Privacy",
+    "description": "Privacy-focused email with a free plan.",
+    "url": "https://proton.me/mail",
+    "free": true,
+    "tags": ["email", "privacy", "security"]
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "category": "Productivity",
+    "description": "Organize notes, projects, tasks and personal knowledge.",
+    "url": "https://www.notion.so",
+    "free": true,
+    "tags": ["notes", "tasks", "workspace"]
+  },
+  {
+    "id": "freecodecamp",
+    "name": "freeCodeCamp",
+    "category": "Education",
+    "description": "Learn coding and web development through free interactive courses.",
+    "url": "https://www.freecodecamp.org",
+    "free": true,
+    "tags": ["coding", "javascript", "web", "courses"]
+  },
+  {
+    "id": "coursera",
+    "name": "Coursera",
+    "category": "Education",
+    "description": "Explore online courses and learning opportunities, including free options.",
+    "url": "https://www.coursera.org",
+    "free": true,
+    "tags": ["courses", "learning", "university"]
+  },
+  {
+    "id": "unsplash",
+    "name": "Unsplash",
+    "category": "Media",
+    "description": "Discover high-quality photos from photographers around the world.",
+    "url": "https://unsplash.com",
+    "free": true,
+    "tags": ["photos", "images", "wallpapers"]
+  },
+  {
+    "id": "pexels",
+    "name": "Pexels",
+    "category": "Media",
+    "description": "Free stock photos and videos for creative projects.",
+    "url": "https://www.pexels.com",
+    "free": true,
+    "tags": ["photos", "videos", "stock"]
+  },
+  {
+    "id": "android",
+    "name": "Android Developers",
+    "category": "Android",
+    "description": "Official Android development documentation, tools and resources.",
+    "url": "https://developer.android.com",
+    "free": true,
+    "tags": ["android", "mobile", "development"]
+  },
+  {
+    "id": "itch",
+    "name": "itch.io",
+    "category": "Gaming",
+    "description": "Discover thousands of indie games and creative projects.",
+    "url": "https://itch.io",
+    "free": true,
+    "tags": ["games", "indie", "gaming"]
+  }
+]
